@@ -78,6 +78,7 @@
 
                 <Button
                     android:id="@+id/LoginButton"
+                    android:onClick="onButtonClick"
                     style="@style/loginButton"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/viewMargin"
