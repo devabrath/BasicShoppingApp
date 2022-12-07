@@ -9,16 +9,16 @@
             android:icon="@drawable/ic_home_24"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_accountinfo"
             android:icon="@drawable/ic_account_circle_24"
             android:title="@string/menu_account_info" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_cart"
             android:icon="@drawable/ic_shopping_cart"
             android:title="@string/menu_cart" />
         <item
             android:id="@+id/nav_sign_out"
-            android:title="Sign Out"
+            android:title="@string/menu_sign_out"
             android:icon="@drawable/ic_baseline_exit_to_app_24"/>
     </group>
 </menu>

@@ -78,7 +78,6 @@
 
                 <Button
                     android:id="@+id/LoginButton"
-                    android:onClick="onButtonClick"
                     style="@style/loginButton"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/viewMargin"
@@ -86,12 +85,12 @@
 
                 <TextView
                     style="@style/parent"
+                    android:id="@+id/new_user"
                     android:layout_marginTop="@dimen/viewMargin"
                     android:textAlignment="center"
                     android:textColor="@color/themeColor"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    android:onClick="onNewUserClick"
                     android:text="@string/new_user"/>
 
             </LinearLayout>

@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Online Shopping</string>
     <string name="lgn_email_hint">Email</string>
+    <string name="reg_email_hint">Email</string>
     <string name="lgn_passwd_hint">Password</string>
+    <string name="reg_passwd_hint">Password</string>
+    <string name="reg_cnf_pass">Confirm Password</string>
     <string name="login_hdr_text">Already \nhave an \nAccount?</string>
     <string name="register_text">Here’s\nyour first\nstep with \nus! </string>
     <string name="register_phone_hint">Phone Number</string>
@@ -22,4 +25,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_account_info">Account Information</string>
     <string name="menu_cart">Cart</string>
+    <string name="menu_sign_out">Sign Out</string>
+    <string name="title_activity_profile">Profile</string>
 </resources>

@@ -79,21 +79,9 @@
                            <EditText
                                android:id="@+id/editTextEmail"
                                style="@style/modifiedEditText"
-                               android:hint="@string/lgn_email_hint"
+                               android:hint="@string/reg_email_hint"
                                android:inputType="textEmailAddress"
                                android:maxLines="1" />
-                       </com.google.android.material.textfield.TextInputLayout>
-
-                       <com.google.android.material.textfield.TextInputLayout
-                           android:id="@+id/textInputMobile"
-                           style="@style/parent"
-                           android:layout_marginTop="@dimen/viewMargin">
-
-                           <EditText
-                               android:id="@+id/editTextMobile"
-                               style="@style/modifiedEditText"
-                               android:hint="@string/register_phone_hint"
-                               android:inputType="phone"/>
                        </com.google.android.material.textfield.TextInputLayout>
 
                        <com.google.android.material.textfield.TextInputLayout
@@ -104,7 +92,20 @@
                            <EditText
                                android:id="@+id/editTextPassword"
                                style="@style/modifiedEditText"
-                               android:hint="@string/lgn_passwd_hint"
+                               android:hint="@string/reg_passwd_hint"
+                               android:inputType="textPassword"
+                               android:maxLines="1"/>
+                       </com.google.android.material.textfield.TextInputLayout>
+
+                       <com.google.android.material.textfield.TextInputLayout
+                           android:id="@+id/textInputConfirmPassword"
+                           style="@style/parent"
+                           android:layout_marginTop="@dimen/viewMargin">
+
+                           <EditText
+                               android:id="@+id/editTextConfirmPassword"
+                               style="@style/modifiedEditText"
+                               android:hint="@string/reg_cnf_pass"
                                android:inputType="textPassword"
                                android:maxLines="1" />
                        </com.google.android.material.textfield.TextInputLayout>
@@ -117,10 +118,10 @@
                            android:text="@string/register"/>
 
                        <TextView
+                           android:id="@+id/old_user"
                            style="@style/parent"
                            android:layout_height="wrap_content"
                            android:layout_marginTop="@dimen/viewMargin"
-                           android:onClick="onAlreadyClick"
                            android:text="@string/old_user"
                            android:textAlignment="center"
                            android:textColor="@color/themeColor"
