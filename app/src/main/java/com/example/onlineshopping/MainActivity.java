@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         register = (Button)findViewById(R.id.RegisterButton);
         already_ac = findViewById(R.id.old_user);
 
-         inputValidation = new InputValidation(MainActivity.this);
-         databaseHelper = new DatabaseHelper(MainActivity.this);
-         user = new User();
+        inputValidation = new InputValidation(MainActivity.this);
+        databaseHelper = new DatabaseHelper(MainActivity.this);
+        user = new User();
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!inputValidation.isInputEditTextMatches(pass_reg,confirmPass_reg,conf_lay,"Password Doesn't Match")){
                     return;
                 }
-                if (!databaseHelper.checkUser(email_reg.getText().toString().trim(),
-                    pass_reg.getText().toString().trim())){
+                if (!databaseHelper.checkUser(email_reg.getText().toString().trim())){
                     user.setName(name_reg.getText().toString().trim());
                     user.setEmail(email_reg.getText().toString().trim());
                     user.setPassword(pass_reg.getText().toString().trim());

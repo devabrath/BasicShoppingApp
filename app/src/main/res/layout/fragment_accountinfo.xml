@@ -22,7 +22,7 @@
             android:fitsSystemWindows="true"
             app:contentScrim="@color/profilePrimaryDark"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar"
+            app:toolbarId="@+id/toolbar1"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleTextAppearance="@style/TransparentText">
@@ -78,7 +78,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar1"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
 

@@ -54,26 +54,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (!inputValidation.isInputEditTextFilled(email,email_layout,"Enter Valid Email")){
-                    return;
-                }
-                if (!inputValidation.isInputEditTextEmail(email,email_layout,"Enter Valid Email")){
-                    return;
-                }
-                if (!inputValidation.isInputEditTextFilled(pass,pass_layout, getString(R.string.error_message_password))){
-                    return;
-                }
-                if (databaseHelper.checkUser(email.getText().toString().trim(),
-                        pass.getText().toString().trim())){
-                    Intent accountsIntent = new Intent(LoginActivity.this,Nav.class);
-                    accountsIntent.putExtra("EMAIL", email.getText().toString().trim());
-                    overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
-                    startActivity(accountsIntent);
-                } else {
-                    //Toast to show success is wrong
-                    Toast.makeText(LoginActivity.this, "Wrong Email or Password", Toast.LENGTH_SHORT).show();
-                }
+
+                Intent accountsIntent = new Intent(LoginActivity.this,Nav.class);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+                startActivity(accountsIntent);
+
             }
+
         });
 
 
