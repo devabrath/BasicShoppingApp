@@ -8,29 +8,44 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.onlineshopping.R;
 import com.example.onlineshopping.databinding.FragmentAccountinfoBinding;
+import com.example.onlineshopping.ui.home.HomeFragment;
 
 public class AccountInfoFragment extends Fragment {
 
-private FragmentAccountinfoBinding binding;
+    TextView BackToHome;
+
+    public AccountInfoFragment(){
+
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState) {
 
-    binding = FragmentAccountinfoBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
-        return root;
+        View view = inflater.inflate(R.layout.fragment_accountinfo,container,false);
+        BackToHome = view.findViewById(R.id.BackToHome);
+        BackToHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new HomeFragment();
+                FragmentTransaction transaction = getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction();
+                transaction.replace(R.id.container_nav,fragment)
+                        .commit();
+            }
+        });
+        return view;
+
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
 }

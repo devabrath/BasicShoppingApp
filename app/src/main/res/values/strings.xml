@@ -16,8 +16,8 @@
     <string name="login">Login</string>
     <string name="forgot">Forgot Password?</string>
     <string name="title_activity_nav">Nav</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="OpenDrawer">Open navigation drawer</string>
+    <string name="CloseDrawer">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>

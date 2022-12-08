@@ -10,28 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.onlineshopping.R;
 import com.example.onlineshopping.databinding.FragmentCartBinding;
 
 public class CartFragment extends Fragment {
 
-private FragmentCartBinding binding;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        CartViewModel accountInfoViewModel =
-                new ViewModelProvider(this).get(CartViewModel.class);
-
-    binding = FragmentCartBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
-
-        final TextView textView = binding.textCart;
-        accountInfoViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+                             ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_cart,container,false);
     }
 
-@Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
 }
