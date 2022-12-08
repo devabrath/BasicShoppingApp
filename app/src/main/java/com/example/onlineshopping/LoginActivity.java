@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -18,7 +19,11 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText email,pass;
     Button login;
+    TextView reg;
     TextInputLayout email_layout,pass_layout;
+    private DatabaseHelper databaseHelper;
+    private InputValidation inputValidation;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +32,15 @@ public class LoginActivity extends AppCompatActivity {
 
         email = (EditText)findViewById(R.id.editTextEmail);
         pass = (EditText)findViewById(R.id.editTextPassword);
+        login = (Button)findViewById(R.id.LoginButton);
+        reg = (TextView)findViewById(R.id.new_user);
 
         email_layout = (TextInputLayout)findViewById(R.id.textInputEmail);
         pass_layout = (TextInputLayout)findViewById(R.id.textInputPassword);
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
-        TextView reg = findViewById(R.id.new_user);
+        databaseHelper = new DatabaseHelper(LoginActivity.this);
+        inputValidation = new InputValidation(LoginActivity.this);
+
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,13 +50,29 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        login = findViewById(R.id.LoginButton);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent login = new Intent(LoginActivity.this,Nav.class);
-                startActivity(login);
-                overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+
+                if (!inputValidation.isInputEditTextFilled(email,email_layout,"Enter Valid Email")){
+                    return;
+                }
+                if (!inputValidation.isInputEditTextEmail(email,email_layout,"Enter Valid Email")){
+                    return;
+                }
+                if (!inputValidation.isInputEditTextFilled(pass,pass_layout, getString(R.string.error_message_password))){
+                    return;
+                }
+                if (databaseHelper.checkUser(email.getText().toString().trim(),
+                        pass.getText().toString().trim())){
+                    Intent accountsIntent = new Intent(LoginActivity.this,Nav.class);
+                    accountsIntent.putExtra("EMAIL", email.getText().toString().trim());
+                    overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+                    startActivity(accountsIntent);
+                } else {
+                    //Toast to show success is wrong
+                    Toast.makeText(LoginActivity.this, "Wrong Email or Password", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

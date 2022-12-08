@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
                 if (!inputValidation.isInputEditTextMatches(pass_reg,confirmPass_reg,conf_lay,"Password Doesn't Match")){
                     return;
                 }
-                if (!databaseHelper.checkUser(email_reg.getText().toString().trim())) {
+                if (!databaseHelper.checkUser(email_reg.getText().toString().trim(),
+                    pass_reg.getText().toString().trim())){
                     user.setName(name_reg.getText().toString().trim());
                     user.setEmail(email_reg.getText().toString().trim());
                     user.setPassword(pass_reg.getText().toString().trim());
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     // Toast to show error message that record already exists
                     Toast.makeText(MainActivity.this, "Email Already Exists", Toast.LENGTH_LONG).show();
+
                 }
             }
         });
