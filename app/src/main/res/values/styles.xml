@@ -119,5 +119,11 @@
         <item name="android:minWidth">250dp</item>
     </style>
 
+    <style name="RoundCorner" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+        <item name="color">@color/white</item>
+    </style>
+
 
 </resources>

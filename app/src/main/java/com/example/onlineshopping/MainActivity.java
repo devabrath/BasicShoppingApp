@@ -15,10 +15,10 @@ import com.google.android.material.textfield.TextInputLayout;
 public class MainActivity extends AppCompatActivity {
 
 
-    TextInputLayout name_lay,email_lay,pass_lay,conf_lay;
-    EditText name_reg,email_reg,pass_reg,confirmPass_reg;
-    Button register;
-    TextView already_ac;
+    private TextInputLayout name_lay,email_lay,pass_lay,conf_lay;
+    private EditText name_reg,email_reg,pass_reg,confirmPass_reg;
+    private Button register;
+    private TextView already_ac;
 
     private DatabaseHelper databaseHelper;
     private InputValidation inputValidation;
@@ -49,19 +49,19 @@ public class MainActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!inputValidation.isInputEditTextFilled(name_reg,name_lay,"Enter Full Name")){
+                if (!inputValidation.isInputEditTextFilled(name_reg,name_lay,getString(R.string.error_message_name))){
                     return;
                 }
-                if (!inputValidation.isInputEditTextFilled(email_reg,email_lay,"Enter Valid Email")){
+                if (!inputValidation.isInputEditTextFilled(email_reg,email_lay,getString(R.string.error_message_email))){
                     return;
                 }
-                if (!inputValidation.isInputEditTextEmail(email_reg,email_lay,"Enter Valid Email")){
+                if (!inputValidation.isInputEditTextEmail(email_reg,email_lay,getString(R.string.error_message_email))){
                     return;
                 }
-                if (!inputValidation.isInputEditTextFilled(pass_reg,pass_lay,"Enter Password")){
+                if (!inputValidation.isInputEditTextFilled(pass_reg,pass_lay,getString(R.string.error_message_password))){
                     return;
                 }
-                if (!inputValidation.isInputEditTextMatches(pass_reg,confirmPass_reg,conf_lay,"Password Doesn't Match")){
+                if (!inputValidation.isInputEditTextMatches(pass_reg,confirmPass_reg,conf_lay,getString(R.string.error_password_match))){
                     return;
                 }
                 if (!databaseHelper.checkUser(email_reg.getText().toString().trim())){
@@ -71,14 +71,16 @@ public class MainActivity extends AppCompatActivity {
                     databaseHelper.addUser(user);
 
                     // Toast to show success message that record saved successfully
-                    Toast.makeText(MainActivity.this, "Registration Successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.success_message), Toast.LENGTH_LONG).show();
+                    emptyInputEdittext();
+
 
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
                 else {
                     // Toast to show error message that record already exists
-                    Toast.makeText(MainActivity.this, "Email Already Exists", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.error_email_exists), Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -89,9 +91,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+                finish();
             }
         });
 
+    }
+
+    private void emptyInputEdittext(){
+        name_reg.setText(null);
+        email_reg.setText(null);
+        pass_reg.setText(null);
+        confirmPass_reg.setText(null);
     }
 
 }

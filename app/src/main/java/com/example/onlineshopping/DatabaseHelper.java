@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ," + COLUMN_USER_NAME + " TEXT,"
             + COLUMN_USER_EMAIL + " Text ," + COLUMN_USER_PASSWORD + "TEXT" + ")";
 
-    private String DROP_USER_TABLE ="DROP TABLE IF EXITS" + TABLE_USER;
+    private String DROP_USER_TABLE ="DROP TABLE IF EXISTS " + TABLE_USER;
 
     public DatabaseHelper(Context context){
         super(context, DATABASE_NAME , null, DATABASE_VERSION);

@@ -28,4 +28,11 @@
     <string name="menu_sign_out">Sign Out</string>
     <string name="title_activity_profile">Profile</string>
     <string name="error_message_password">Enter Valid Password</string>
+    <string name="error_message_name">Enter Full Name</string>
+    <string name="error_message_email">Enter Valid Email</string>
+    <string name="error_email_exists">Enter Already Exists</string>
+    <string name="error_password_match">Password Does Not Match</string>
+    <string name="error_valid_email_password">Wrong Email or Password</string>
+    <string name="success_message">Registration Successful</string>
+
 </resources>
