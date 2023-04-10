@@ -36,7 +36,7 @@
                 style="@style/profileDetailsTextMain" />
 
             <TextView
-                android:text="developer"
+                android:text="Devabrath"
                 android:layout_toRightOf="@id/nameImageView"
                 style="@style/profileDetailsMiniText" />
         </RelativeLayout>
@@ -55,7 +55,7 @@
                 style="@style/profileDetailsTextMain"/>
 
             <TextView
-                android:text="+91-8129999999"
+                android:text="+91-7036-832-532"
                 android:layout_toRightOf="@id/mobileImageView"
                 style="@style/profileDetailsMiniText" />
 
@@ -74,7 +74,7 @@
                 style="@style/profileDetailsTextMain" />
 
             <TextView
-                android:text="developer@appsnipp.com"
+                android:text="devabrathsahu7032@gmail.com"
                 android:layout_toRightOf="@id/emailImageView"
                 style="@style/profileDetailsMiniText" />
 
@@ -94,7 +94,7 @@
                 style="@style/profileDetailsTextMain" />
 
             <TextView
-                android:text="Avenue 2nd Street NW SY."
+                android:text="Hyderabad"
                 android:layout_toRightOf="@id/addressImageView"
                 style="@style/profileDetailsMiniText" />
 
@@ -114,7 +114,7 @@
                 style="@style/profileDetailsTextMain" />
 
             <TextView
-                android:text="12-05-1990"
+                android:text="15-11-2002"
                 android:layout_toRightOf="@id/dobImageView"
                 style="@style/profileDetailsMiniText" />
 
