@@ -1,6 +1,8 @@
 # Basic Shopping App
 
-A Basic Shopping Application Developed Using Java
+A Basic Shopping Application 📱Developed Using Java ♨️
+
+## ❤️ Try App
 
 ## ⚙️ Features
 * App consists of Basic 4 items
