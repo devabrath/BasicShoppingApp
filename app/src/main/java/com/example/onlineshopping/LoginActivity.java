@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (!inputValidation.isInputEditTextEmail(email, email_layout, getString(R.string.error_message_email))) {
                     return;
                 }
-                if (!inputValidation.isInputEditTextFilled(pass, pass_layout, getString(R.string.error_message_email))) {
+                if (!inputValidation.isInputEditTextFilled(pass, pass_layout, getString(R.string.error_message_password))) {
                     return;
                 }
 
